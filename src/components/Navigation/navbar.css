@@ -1,0 +1,210 @@
+.nav {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.right-side {
+  margin: 0 8rem;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.icons {
+  display: flex;
+  margin-right: 2rem;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  position: relative;
+  transition: color 0.3s;
+  padding: 0 10px;
+  -webkit-transition: color 0.3s, -webkit-text-stroke 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.menu li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -10px;
+  left: 50%;
+  background-color: var(--text-color);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out, visibility 0s ease-in-out;
+}
+
+.menu li a:hover,
+.menu li.active a {
+  color: transparent;
+  -webkit-text-stroke: 0.1px var(--text-color);
+  text-shadow: 0 0 0 var(--text-color);
+}
+
+.menu li a:hover::before {
+  visibility: visible;
+  width: 100%;
+  left: 0;
+}
+
+.ham {
+  display: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: var(--text-color);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--background-color);
+}
+
+.fa {
+  font-size: 1.3em;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 2px;
+}
+
+.search-input {
+  height: 30px;
+  width: auto;
+  border: none;
+  outline: none;
+  transition: width 0.3s ease-in-out;
+  padding: 0 1rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.fa-search + .search-input {
+  width: 400px;
+}
+
+.search-open {
+  background-color: var(--text-color);
+}
+
+.search-open .fa {
+  color: var(--accent-color);
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .ham {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu li a {
+    margin: 15px;
+    color: var(--text-color);
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 77%;
+    left: 0;
+    background-color: var(--background-color);
+    width: 100%;
+    z-index: 1;
+  }
+  .menu li.active a {
+    color: var(--accent-color);
+    transform: scale(1.1);
+  }
+  .menu li a:hover {
+    color: var(--accent-color);
+  }
+  .menu li a::before {
+    background-color: var(--accent-color);
+    bottom: -10px;
+  }
+  .right-side {
+    margin: 0;
+  }
+  .left-side {
+    justify-content: flex-end;
+  }
+}
