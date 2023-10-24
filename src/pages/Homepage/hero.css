@@ -20,12 +20,28 @@ canvas {
 
 .hero-text {
   width: 100%;
+  margin: 0 auto;
+  margin-top: 0;
+
 }
 
 .hero-text h1 {
   color: var(--accent-color);
+  font-size: 8rem;
+  margin: 0 auto;
+  padding-left: 5.5rem;
+}
+.hero-text span{
+  color: var(--text-color);
 }
 
 .hero-text h3 {
   color: var(--text-color);
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container{
+    flex-direction: column;
+  }
 }

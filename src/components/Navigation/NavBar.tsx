@@ -1,5 +1,6 @@
 import { useState, FC } from "react"
 import { Link, useLocation } from "react-router-dom"
+import LoginModal from "../LoginModal/LoginModal"
 import "font-awesome/css/font-awesome.min.css"
 import "../../index.css"
 import "./navbar.css"
@@ -19,6 +20,8 @@ const Icon: FC<IconProps> = ({ className, ariaHidden = true, onClick }) => {
 const NavBar: FC = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false)
+  const [showLogin, setShowLogin] = useState(false)
+
   const location = useLocation()
   const currentPath = location.pathname
 
@@ -32,6 +35,10 @@ const NavBar: FC = () => {
       console.log("Search button clicked, perform search")
     }
     setIsSearchOpen(!isSearchOpen)
+  }
+
+  const handleUserClick = () => {
+    setShowLogin(!showLogin)
   }
 
   return (
@@ -95,9 +102,10 @@ const NavBar: FC = () => {
             <Icon className="fa fa-search" onClick={handleSearchIconClick} />
           </div>
           <Icon className="fa fa-shopping-basket" />
-          <Icon className="fa fa-user" />
+          <i className="fa fa-user" onClick={handleUserClick}></i>{" "}
         </div>
       </div>
+      {showLogin && <LoginModal close={() => setShowLogin(false)} />}
     </nav>
   )
 }

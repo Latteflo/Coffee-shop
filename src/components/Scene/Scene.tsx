@@ -1,4 +1,3 @@
-import React from "react"
 import { Cup } from "./Cup"
 import { Environment, OrbitControls, Bounds } from "@react-three/drei"
 import { EffectComposer, N8AO } from "@react-three/postprocessing"
