@@ -1,0 +1,98 @@
+.circularText span {
+  height: 50vh;
+  position: absolute;
+  width: 100%;
+  transform-origin: bottom center;
+}
+
+.char1 {
+  transform: rotate(-128deg);
+}
+.char2 {
+  transform: rotate(-108deg);
+}
+.char3 {
+  transform: rotate(-96deg);
+}
+.char4 {
+  transform: rotate(-84deg);
+}
+.char5 {
+  transform: rotate(-72deg);
+}
+.char6 {
+  transform: rotate(-60deg); 
+}
+.char7 {
+  transform: rotate(-48deg);
+}
+.char8 {
+  transform: rotate(-36deg);
+}
+.char9 {
+  transform: rotate(-24deg);
+}
+.char10 {
+  transform: rotate(-12deg);
+}
+.char11 {
+  transform: rotate(0deg);
+}
+.char12 {
+  transform: rotate(12deg);
+}
+.char13 {
+  transform: rotate(24deg); 
+}
+.char14 {
+  transform: rotate(36deg);
+}
+.char15 {
+  transform: rotate(48deg);
+}
+.char16 {
+  transform: rotate(60deg);
+}
+.char17 {
+  transform: rotate(72deg);
+}
+.char18 {
+  transform: rotate(84deg);
+}
+.char19 {
+  transform: rotate(96deg);
+}
+.char20 {
+  transform: rotate(108deg);
+}
+.char21 {
+  transform: rotate(120deg);
+}
+.char22 {
+  transform: rotate(132deg);
+}
+.char23 {
+  transform: rotate(144deg);
+}
+.char24 {
+  transform: rotate(156deg);
+}
+.char25 {
+  transform: rotate(168deg);
+}
+.char26 {
+  transform: rotate(180deg);
+}
+
+.char27 {
+  transform: rotate(192deg);
+}
+.char28 {
+  transform: rotate(204deg);
+}
+.char29 {
+  transform: rotate(216deg);
+}
+.char30 {
+  transform: rotate(228deg);
+}

@@ -6,17 +6,18 @@
   
   .shop-section {
     display: flex;
+    width: 100%;
   }
   
   .left-side-shop {
     display: flex;
     flex-direction: column;
-    flex: 30%;
+    flex: 1;
     padding: 10px;
   }
   
   .right-side-shop{
-    flex: 1; 
+    flex: 3; 
     padding: 10px;
   }
   
@@ -24,7 +25,7 @@
     display: flex;
     overflow-x: auto;
     gap: 10px;
-    margin-top: 10px; /* Add some margin to separate from PopularChoices */
+    margin-top: 10px;
   }
   
   .carousel-item {

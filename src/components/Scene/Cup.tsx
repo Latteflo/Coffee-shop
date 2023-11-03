@@ -11,7 +11,7 @@ export const Cup = () => {
   }
 
   const { nodes, materials } = useGLTF(
-    "/assets/cup.glb"
+    "/assets/3Dmodel/cup.glb"
   ) as unknown as GLTFResult
   return (
     <group dispose={null}>

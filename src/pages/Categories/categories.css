@@ -1,78 +1,90 @@
-
 .search-container {
-    display: inline-flex;
-    gap: 1.5rem;
-  }
-  
-  .search-container h3{
-    font-size: 1.8rem;
-  }
-  .hero-search {
-    border-radius: 50px;
-    background-color: var(--text-color);
-    width: 25rem;
-    height: 3rem;
-    margin: auto;
-  }
-  .hero-search .search-input {
-    width: 20rem;
-    border-radius: 15px;
-  }
-  
-  .hero-search .fa-search {
-    font-size: 2rem;
-    padding: 0.2rem;
-    color: var(--accent-color);
-  }
-  
-  .categories-cards {
-    display: flex;
-    justify-content: center;
+  display: inline-flex;
+  gap: 1.5rem;
+}
+
+.search-container h3 {
+  font-size: 1.8rem;
+}
+.hero-search {
+  border-radius: 50px;
+  background-color: var(--text-color);
+  width: 25rem;
+  height: 3rem;
+  margin: auto;
+}
+.hero-search .search-input {
+  width: 20rem;
+  border-radius: 15px;
+  background-color: var(--text-color);
+}
+
+.hero-search .fa-search {
+  font-size: 2rem;
+  padding: 0.2rem;
+  color: var(--accent-color);
+}
+
+.categories-cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.card-collection {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 4rem;
+  background-repeat: no-repeat;
+}
+
+.card {
+  background-color: #333;
+  width: 10rem;
+  border-radius: 15px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-collection .card:nth-child(odd):hover ~ .card-collection {
+  background-position: left center;
+}
+
+.card-collection .card:nth-child(even):hover ~ .card-collection {
+  background-position: right center;
+}
+.card img {
+  width: 100%;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .search-container {
     flex-direction: column;
     align-items: center;
-    background-color: var(--background-color);
-    color: var(--text-color);
   }
   .card-collection {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 1.5rem;
-    width: 100%;
-    padding: 4rem;
-  }
-  
-  .card {
-    background-color: #333;
-    width: 10rem;
-    border-radius: 15px;
-    align-items: center;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px); 
-    background-color: rgba(255, 255, 255, 0.1); 
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
-  
-  .card img {
-    width: 100%;
+  .card {
+    width: 80%;
   }
-  
-  .offers {
-    display: flex;
-    justify-content: center;
-  }
-
-  @media screen and (max-width: 768px) {
-    .search-container{
-      flex-direction: column;
-    }
-    .card-collection{
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+}

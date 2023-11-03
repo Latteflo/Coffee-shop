@@ -1,5 +1,18 @@
-import React, { FC } from "react";
-import "./footer.css";
+import { FC } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons"
+import {
+  faInstagram,
+  faTwitter,
+  faFacebookF,
+} from "@fortawesome/free-brands-svg-icons"
+
+import "../../index.css"
+import "./footer.css"
 
 const Footer: FC = () => {
   return (
@@ -15,17 +28,29 @@ const Footer: FC = () => {
       <div className="footer-section">
         <h3>Social Media</h3>
         <ul>
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <li>Instagram</li>
+          <li>
+            <FontAwesomeIcon icon={faFacebookF} /> Facebook
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faTwitter} /> Twitter
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faInstagram} /> Instagram
+          </li>
         </ul>
       </div>
       <div className="footer-section">
         <h3>Contacts</h3>
         <ul>
-          <li>Email</li>
-          <li>Phone</li>
-          <li>Location</li>
+          <li>
+            <FontAwesomeIcon icon={faEnvelope} /> Email
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faPhone} /> Phone
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faMapMarkerAlt} /> Location
+          </li>
         </ul>
       </div>
       <div className="footer-section">
@@ -36,7 +61,7 @@ const Footer: FC = () => {
         </ul>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

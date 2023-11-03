@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react"
+import { useRef, useMemo } from "react"
 import { useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import * as THREE from "three"
@@ -122,7 +122,7 @@ export function SteamShader(props) {
     // teaSteamRef.current.material.uniforms.uUvFrequency.value.y = uUvFrequencyY;
   })
 
-  const { nodes } = useGLTF("./assets/coffeeSteamModel-1.glb")
+  const { nodes } = useGLTF("./assets/3Dmodel/coffeeSteamModel-1.glb")
   return (
     <group {...props} dispose={null} name="steam">
       <mesh

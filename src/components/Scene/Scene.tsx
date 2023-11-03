@@ -10,7 +10,7 @@ export const Scene = () => {
       <Bounds fit clip observe damping={6} margin={1.5}>
         <Cup />
       </Bounds>
-      <Environment files={"./assets/empty_warehouse_01_1k.hdr"} />
+      <Environment files={"./assets/3Dmodel/empty_warehouse_01_1k.hdr"} />
       <OrbitControls autoRotate enableZoom={false} enablePan={false} maxPolarAngle={Math.PI/2} minPolarAngle={1.1}/>
       <EffectComposer disableNormalPass>
         <N8AO intensity={1.5} aoSamples={14} denoiseSamples={4} denoiseRadius={9} distanceFalloff={0.1}/>

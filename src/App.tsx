@@ -7,6 +7,7 @@ import Categories from './pages/Categories/Categories';
 import Blog from './pages/Blog/Blog';
 import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import NotFound from './pages/NotFound/NotFound';
 import "./App.css"
 
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Route path='/categories' element={<Categories/>} />
         <Route path='/blog' element={<Blog/>} />
         <Route path='/contact' element={<Contact/>} />
+        <Route path="*" element={<NotFound/>} /> 
       </Routes>
       <Footer/>
       {/*<Route path/>*/}

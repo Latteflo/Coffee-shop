@@ -5,10 +5,8 @@ import "./about.css"
 const About: FC = () => {
   return (
     <div className="about-page">
-      <h2>About Us</h2>
-
       <div className="container">
-        <div className="text-section">
+        <div className="text-section-about">
           <h2>Our History</h2>
           <p>
             From a humble vendor to the bustling cafes we operate today, our
@@ -21,12 +19,12 @@ const About: FC = () => {
           </p>
         </div>
         <div className="image-section">
-          <img src="../../assets/images/coffeeee.png" alt="Our History" />
+          <video src="../../assets/video/hand.mp4" autoPlay muted loop></video>
         </div>
       </div>
 
       <div className="container reverse">
-        <div className="text-section">
+        <div className="text-section-about">
           <h2>Our Mission</h2>
           <p>
             Our mission is to redefine the coffee experience by prioritizing
@@ -38,12 +36,12 @@ const About: FC = () => {
           </p>
         </div>
         <div className="image-section">
-          <img src="../../assets/images/coffeeee.png" alt="Our Mission" />
+        <video src="../../assets/video/pouring-coffee.mp4" autoPlay muted loop></video>
         </div>
       </div>
 
       <div className="container">
-        <div className="text-section">
+        <div className="text-section-about">
           <h2>Meet the Team</h2>
           <p>
             Behind every successful cafe is a team of passionate, hardworking
@@ -57,7 +55,7 @@ const About: FC = () => {
           </p>
         </div>
         <div className="image-section">
-          <img src="../../assets/images/coffeeee.png" alt="Our Team" />
+        <video src="../../assets/video/friend.mp4" autoPlay muted loop></video>
         </div>
       </div>
     </div>
