@@ -18,6 +18,7 @@ const Home: FC = () => {
           <h1>
           <CircularText text="Discover the best coffee ~" />
           </h1>
+          <h2>Morning Harmony: Love, Latte, Mocha & Comfort in Every Cup</h2>
           <Canvas>
             <Scene />
           </Canvas>

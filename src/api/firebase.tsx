@@ -1,23 +1,20 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth , signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import * as dotenv from "dotenv";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+dotenv.config({ path: __dirname+'/../.env' });
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBNabVHtwgeW7dDN9zPa15nXI3d7MhRAps",
-    authDomain: "coffee-79788.firebaseapp.com",
-    projectId: "coffee-79788",
-    storageBucket: "coffee-79788.appspot.com",
-    messagingSenderId: "539465703467",
-    appId: "1:539465703467:web:163ed68f9ece7756308a6e",
-    measurementId: "G-T0T1G2CQKG"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID
 };
 
-// Initialize Firebase
 initializeApp(firebaseConfig);
 const Auth = getAuth();
 
