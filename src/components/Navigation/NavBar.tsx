@@ -43,7 +43,6 @@ const NavBar: FC = () => {
 
   return (
     <nav className="nav">
-      <div className="logo">Coffee Shop</div>
       <div className="right-side">
         <ul className={`menu ${toggleMenu ? "active" : ""}`}>
           <li className={currentPath === "/" ? "active" : ""}>

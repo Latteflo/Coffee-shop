@@ -39,25 +39,6 @@ const About: FC = () => {
         <video src="../../assets/video/pouring-coffee.mp4" autoPlay muted loop></video>
         </div>
       </div>
-
-      <div className="container">
-        <div className="text-section-about">
-          <h2>Meet the Team</h2>
-          <p>
-            Behind every successful cafe is a team of passionate, hardworking
-            individuals, and we're no exception. Our team comprises of coffee
-            connoisseurs, professional baristas, culinary experts, and customer
-            service stars. Together, we strive to create a warm, welcoming space
-            where you can enjoy your coffee, work on your laptop, or catch up
-            with friends. Each member brings their unique skill set and
-            personality to the table, making us more than just a cafe— we're a
-            family
-          </p>
-        </div>
-        <div className="image-section">
-        <video src="../../assets/video/friend.mp4" autoPlay muted loop></video>
-        </div>
-      </div>
     </div>
   )
 }

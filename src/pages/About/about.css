@@ -8,7 +8,7 @@
 .container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 .container.reverse {
@@ -17,7 +17,7 @@
 
 .text-section-about,
 .image-section {
-  flex: 1;
+  flex: 1 2;
   padding: 1rem;
 }
 
@@ -29,9 +29,7 @@
 }
 
 video {
-  position: relative;
-  width: 80%;
-  padding: 1rem;
+  width: 100%;
   overflow: hidden;
   z-index: 1;
 }
@@ -70,7 +68,6 @@ video:hover:before {
 video:hover:after {
   transform: scaleY(1);
 }
-
 
 @media (max-width: 768px) {
   .container,

@@ -3,11 +3,8 @@ import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
 import "../../index.css"
 import "./map.css"
-import * as dotenv from "dotenv";
 
-dotenv.config({ path: __dirname+'./.env' });
-
-mapboxgl.accessToken = process.env.ACCESS_TOKEN || "";
+mapboxgl.accessToken = process.env.REACT_APP_ACCESS_TOKEN || "";
 
 const MapComponent: React.FC = () => {
   useEffect(() => {

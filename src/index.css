@@ -1,7 +1,12 @@
 :root {
-    --accent-color: #f55951;
-    --background-color: #242424;
-    --text-color: #f1e8e6;
-    --hover-color: #edd2cb;
-  }
-  
+  --accent-color: #f55951;
+  --background-color: #242424;
+  --secondary-background-color: #332828b7;
+  --text-color: #f1e8e6;
+  --hover-color: #edd2cb;
+}
+
+*{
+  padding: 0;
+  margin: 0 auto;
+}

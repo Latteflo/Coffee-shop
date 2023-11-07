@@ -1,43 +1,33 @@
-import React from 'react';
-import "../../index.css"
-import "./onlineShop.css"
+import React, { useState } from "react"
+import SearchResults from "../SearchResults/SearchResults"
+import { mockProducts } from "../Product/mockData"
+import { ProductType } from '../../../types';
 
-const Carousel: React.FC = () => {
-  return (
-    <div className="carousel">
-      <div className="carousel-item">Item 1</div>
-      <div className="carousel-item">Item 2</div>
-      <div className="carousel-item">Item 3</div>
-      <div className="carousel-item">Item 3</div>
-      <div className="carousel-item">Item 3</div>
-    </div>
-  );
-};
-
-const PopularChoices: React.FC = () => {
-  return (
-    <div className="popular-choices">
-      <div className="choice-card">Popular Choice 1</div>
-      <div className="choice-card">Popular Choice 2</div>
-      <div className="choice-card">Popular Choice 3</div>
-    </div>
-  );
-};
+type CartItemType = ProductType & {
+  quantity: number
+}
 
 const OnlineShop: React.FC = () => {
+  const [products, setProducts] = useState<ProductType[]>(mockProducts);
+  const [cart, setCart] = useState<CartItemType[]>([])
+
+  const handleAddToCart = (productToAdd: ProductType) => {
+    setCart((prevCart) => {
+      const isProductInCart = prevCart.find((item) => item.id === productToAdd.id);
+
+      if (isProductInCart) {
+        return prevCart.map((item) =>
+          item.id === productToAdd.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevCart, { ...productToAdd, quantity: 1 }];
+      }
+    });
+  };
+
   return (
-    <section className="offers">
-      <div className="shop-section">
-        <div className="left-side-shop">
-          <h4>Special Offers</h4>
-          <p>Get special discounts this month!</p>
-          <p>Free shipping for orders over $50.</p>
-        </div>
-        <div className="right-side-shop">
-          <PopularChoices />
-          <Carousel />
-        </div>
-      </div>
+    <section className="online-shop">
+      <SearchResults products={products} onAddToCart={handleAddToCart} />
     </section>
   );
 };

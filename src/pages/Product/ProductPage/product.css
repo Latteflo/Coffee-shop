@@ -1,0 +1,22 @@
+/* products.css */
+
+.product-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+  background: var(--background-color);
+}
+
+@media (min-width: 768px) {
+  .product-page {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-page {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

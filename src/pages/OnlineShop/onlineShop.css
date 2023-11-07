@@ -1,53 +1,56 @@
 .offers {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.shop-section {
+  max-width: 1200px; 
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 1rem; 
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.product img {
+  width: 100%;
+  object-fit: contain; 
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .search-results {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
   }
-  
-  .shop-section {
-    display: flex;
-    width: 100%;
-  }
-  
-  .left-side-shop {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .right-side-shop{
-    flex: 3; 
-    padding: 10px;
-  }
-  
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .carousel-item {
-    min-width: 200px;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .popular-choices {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .choice-card {
-    flex: 1;
-    min-width: calc(50% - 10px);
-    background-color: var(--text-color);
-    color: var(--background-color);
-    padding: 20px;
-    text-align: center;
-  }
-  
+}
