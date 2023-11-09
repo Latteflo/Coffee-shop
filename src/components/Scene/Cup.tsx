@@ -16,10 +16,10 @@ export const Cup = () => {
   return (
     <group dispose={null}>
       <mesh geometry={nodes.Plate.geometry}>
-        <meshStandardMaterial color={"red"} roughness={0.2} />
+        <meshStandardMaterial color={"#bf0000"} roughness={0.2} />
       </mesh>
       <mesh geometry={nodes.Cup.geometry}>
-        <meshStandardMaterial color={"red"} roughness={0.2} />
+        <meshStandardMaterial color={"#bf0000"} roughness={0.2} />
       </mesh>
       <mesh geometry={nodes.Coffee.geometry} material={materials.Coffee} />
     </group>

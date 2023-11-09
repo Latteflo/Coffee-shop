@@ -6,21 +6,20 @@ const articles = [
     id: 1,
     title: 'The Art of Brewing Coffee',
     description: 'Discover the secrets behind making the perfect cup of coffee.',
-    image: 'https://via.placeholder.com/450',
+    image: '../../../assets/images/coffeeee.png',
   },
   {
     id: 2,
     title: 'Exploring Coffee Origins',
     description: 'A journey through the coffee-producing regions of the world.',
-    image: 'https://via.placeholder.com/450',
+    image: '../../../assets/images/coffeeee.png',
   },
   {
     id: 3,
     title: 'Latte Art 101',
     description: 'Learn the basics of creating beautiful latte art.',
-    image: 'https://via.placeholder.com/450',
+    image: '../../assets/images/coffeeee.png',
   },
-  // ... more articles
 ];
 
 

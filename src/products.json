@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Electronics",
+      "imageUrl": "path/to/electronics-image.jpg",
+      "description": "Find the latest gadgets and electronic devices."
+    },
+    {
+      "id": 2,
+      "name": "Books",
+      "imageUrl": "path/to/books-image.jpg",
+      "description": "Dive into the worlds of fiction, non-fiction, and educational material."
+    },
+    {
+      "id": 3,
+      "name": "Apparel",
+      "imageUrl": "path/to/apparel-image.jpg",
+      "description": "Latest trends in fashion and apparel for all."
+    },
+    {
+      "id": 4,
+      "name": "Home & Kitchen",
+      "imageUrl": "path/to/home-kitchen-image.jpg",
+      "description": "Equip your home with our selection of kitchenware and decor."
+    }
+  ]
+  

@@ -9,13 +9,14 @@
     padding: 2rem;
   }
   
-  .not-found-section h1 {
+  .not-found-section h2 {
     font-size: 6rem;
     color: var(--accent-color);
     margin-bottom: 1rem;
   }
   
   .not-found-section p {
+    color: var(--text-light-color);
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }

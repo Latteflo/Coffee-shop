@@ -167,6 +167,7 @@
 
 @media screen and (max-width: 768px) {
   .nav {
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -174,7 +175,10 @@
   }
 
   .ham {
-    display: flex;
+    display: block;
+    z-index: 11; 
+    margin: 0;
+    padding: 0;
   }
 
   .menu {
@@ -189,24 +193,40 @@
   .menu.active {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 77%;
-    left: 0;
-    background-color: var(--background-color);
-    width: 100%;
-    z-index: 1;
+    justify-content: center; 
+    align-items: center; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 100%; 
+    background-color: var(--secondary-background-color); 
+    color: var(--text-color); 
+    z-index: 10; 
+    padding-top: 3rem; 
+    transition: transform 0.3s ease-in-out; 
+    transform: translateY(0);
   }
+  .menu li a {
+    color: var(--text-color); 
+    font-size: 1.5rem; 
+    padding: 0.5rem 1rem; 
+  }
+
   .menu li.active a {
-    color: var(--accent-color);
-    transform: scale(1.1);
+    color: var(--accent-color); 
+    transform: scale(1.1); 
   }
+
   .menu li a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color); 
   }
+
   .menu li a::before {
-    background-color: var(--accent-color);
-    bottom: -10px;
+    background-color: var(--accent-color); 
+    bottom: -10px; 
   }
+
   .right-side {
     margin: 0;
   }

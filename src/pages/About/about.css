@@ -1,9 +1,9 @@
 .about-page {
   padding: 2rem;
-  background-color: var(--text-color);
 }
 .about-page h2 {
   color: var(--accent-color);
+  margin: 1.5rem auto;
 }
 .container {
   display: flex;
@@ -19,6 +19,7 @@
 .image-section {
   flex: 1 2;
   padding: 1rem;
+  border-radius: 30px;
 }
 
 .text-section-about {
@@ -32,42 +33,10 @@ video {
   width: 100%;
   overflow: hidden;
   z-index: 1;
-}
-
-video:before,
-video:after {
-  content: "";
-  position: absolute;
-  background: var(--accent-color);
-  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  z-index: -1;
-}
-
-video:before {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-
-video:after {
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  transform: scaleY(0);
-  transform-origin: top;
-}
-
-video:hover:before {
-  transform: scaleX(1);
-}
-
-video:hover:after {
-  transform: scaleY(1);
-}
+  border-radius: 15px;
+  box-shadow: -4px -1px 36px -3px rgba(0,0,0,0.2);
+  -webkit-box-shadow: -4px -1px 36px -3px rgba(0,0,0,0.2);
+  -moz-box-shadow: -4px -1px 36px -3px rgba(0,0,0,0.2);}
 
 @media (max-width: 768px) {
   .container,

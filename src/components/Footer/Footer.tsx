@@ -1,24 +1,35 @@
-import { FC } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
   faPhone,
   faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons"
+} from '@fortawesome/free-solid-svg-icons';
 import {
-  faInstagram,
-  faTwitter,
   faFacebookF,
-} from "@fortawesome/free-brands-svg-icons"
+  faTwitter,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
+import './footer.css';
 
-import "../../index.css"
-import "./footer.css"
+type FooterLinkItemProps = {
+  href: string;
+  icon: any; 
+  children: React.ReactNode;
+};
 
-const Footer: FC = () => {
+const FooterLinkItem: React.FC<FooterLinkItemProps> = ({ href, icon, children }) => (
+  <li>
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={String(children)}>
+      <FontAwesomeIcon icon={icon} /> {children}
+    </a>
+  </li>
+);
+
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-section">
-        <h3>Information</h3>
         <ul>
           <li>About Us</li>
           <li>Terms & Conditions</li>
@@ -26,42 +37,39 @@ const Footer: FC = () => {
         </ul>
       </div>
       <div className="footer-section">
-        <h3>Social Media</h3>
         <ul>
-          <li>
-            <FontAwesomeIcon icon={faFacebookF} /> Facebook
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faTwitter} /> Twitter
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faInstagram} /> Instagram
-          </li>
+          <FooterLinkItem href="https://facebook.com" icon={faFacebookF}>
+            Facebook
+          </FooterLinkItem>
+          <FooterLinkItem href="https://twitter.com" icon={faTwitter}>
+            Twitter
+          </FooterLinkItem>
+          <FooterLinkItem href="https://instagram.com" icon={faInstagram}>
+            Instagram
+          </FooterLinkItem>
         </ul>
       </div>
       <div className="footer-section">
-        <h3>Contacts</h3>
         <ul>
-          <li>
-            <FontAwesomeIcon icon={faEnvelope} /> Email
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faPhone} /> Phone
-          </li>
+          <FooterLinkItem href="mailto:info@example.com" icon={faEnvelope}>
+            Email
+          </FooterLinkItem>
+          <FooterLinkItem href="tel:+123456789" icon={faPhone}>
+            Phone
+          </FooterLinkItem>
           <li>
             <FontAwesomeIcon icon={faMapMarkerAlt} /> Location
           </li>
         </ul>
       </div>
       <div className="footer-section">
-        <h3>Jobs</h3>
         <ul>
           <li>Careers</li>
           <li>Internships</li>
         </ul>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

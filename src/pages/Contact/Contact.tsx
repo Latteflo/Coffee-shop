@@ -1,15 +1,15 @@
-import React from "react"
-import EmailForm from "../../components/EmailJsForm/EmailForm"
-import LocationMap from "../../components/LocationMap/LocationMap"
-import "../../index.css"
-import "./contact.css"
+import React from "react";
+import EmailForm from "../../components/EmailJsForm/EmailForm";
+import LocationMap from "../../components/LocationMap/LocationMap";
+import "../../index.css";
+import "./contact.css";
 
 const Contact: React.FC = () => {
   return (
-    <section className="contact">
+    <section className="contact" aria-labelledby="contact-header">
       <div className="contact-container">
         <div className="contact-intro">
-          <h2>Contact Us</h2>
+          <h2 id="contact-header">Contact Us</h2>
           <p>
             We'd love to hear from you! Whether you have a question about us,
             our products, pricing, or anything else, our team is ready to answer
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
