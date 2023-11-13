@@ -7,6 +7,7 @@ import {
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import "../../index.css"
 import "./loginModal.css"
+import { useNavigate  } from "react-router-dom"
 
 const provider = new GoogleAuthProvider()
 
@@ -15,11 +16,13 @@ const LoginModal: React.FC<{ close: () => void }> = ({ close }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirm, setPasswordConfirm] = useState("")
+  const navigate = useNavigate();
 
   const handleEmailLogin = async () => {
     try {
       await signInWithEmailAndPassword(Auth, email, password)
       console.log("Logged in successfully")
+      navigate('/profile');
       close()
     } catch (error) {
       console.error("Error logging in:", error)
