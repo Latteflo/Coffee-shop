@@ -1,27 +1,72 @@
 [
-    {
-      "id": 1,
-      "name": "Electronics",
-      "imageUrl": "path/to/electronics-image.jpg",
-      "description": "Find the latest gadgets and electronic devices."
-    },
-    {
-      "id": 2,
-      "name": "Books",
-      "imageUrl": "path/to/books-image.jpg",
-      "description": "Dive into the worlds of fiction, non-fiction, and educational material."
-    },
-    {
-      "id": 3,
-      "name": "Apparel",
-      "imageUrl": "path/to/apparel-image.jpg",
-      "description": "Latest trends in fashion and apparel for all."
-    },
-    {
-      "id": 4,
-      "name": "Home & Kitchen",
-      "imageUrl": "path/to/home-kitchen-image.jpg",
-      "description": "Equip your home with our selection of kitchenware and decor."
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Espresso",
+    "description": "Rich and aromatic single shot of espresso.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 2.99
+  },
+  {
+    "id": 2,
+    "title": "Cappuccino",
+    "description": "Creamy cappuccino with a perfect blend of espresso and milk.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 3.49
+  },
+  {
+    "id": 3,
+    "title": "Latte",
+    "description": "Smooth and velvety latte with a subtle coffee flavor.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 3.99
+  },
+  {
+    "id": 4,
+    "title": "Mocha",
+    "description": "Delicious blend of espresso, chocolate, and steamed milk.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 4.29
+  },
+  {
+    "id": 5,
+    "title": "Iced Coffee",
+    "description": "Refreshing and invigorating cold coffee, perfect for warm days.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 3.49
+  },
+  {
+    "id": 6,
+    "title": "Coffee Beans",
+    "description": "Premium quality coffee beans, ideal for home brewing.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 12.99
+  },
+  {
+    "id": 7,
+    "title": "Flat White",
+    "description": "Smooth combination of espresso and steamed milk, creating a creamy texture.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 3.99
+  },
+  {
+    "id": 8,
+    "title": "Americano",
+    "description": "Rich espresso diluted with hot water, retaining a strong flavor.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 2.99
+  },
+  {
+    "id": 9,
+    "title": "Caramel Macchiato",
+    "description": "Delightful mix of espresso, steamed milk, and caramel syrup.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 4.49
+  },
+  {
+    "id": 10,
+    "title": "Irish Coffee",
+    "description": "Invigorating blend of coffee, Irish whiskey, sugar, and cream.",
+    "image": "../../../assets/images/coffeeee.png",
+    "price": 5.49
+  }
+]
