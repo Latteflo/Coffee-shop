@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { collection, getDocs } from "firebase/firestore"
-import { db } from "../../api/firebase"
 import axios from "axios"
 import "./categories.css"
 
@@ -20,18 +18,14 @@ const Categories: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://coffee-shop-bc2d7-default-rtdb.europe-west1.firebasedatabase.app/.json") 
-        console.log("Response data:", response.data);
-  
+        const response = await axios.get("https://coffee-shop-bc2d7-default-rtdb.europe-west1.firebasedatabase.app/.json")   
         if (response.data) {
           const productsArray = Object.keys(response.data).map(key => ({
             id: key,
             ...response.data[key]
           }));
           setProducts(productsArray);
-        } else {
-          console.log("No data available at this path");
-        }
+        } 
       } catch (error) {
         console.error("Error fetching products:", error);
       }
