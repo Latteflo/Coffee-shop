@@ -13,12 +13,13 @@
 
 .articles-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-  gap: 2rem; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; 
   justify-content: center;
 }
 
 .article-card {
+  width: 350px;
   background-color: var(--secondary-background-color); 
   padding: 2rem;
   border-radius: 12px;

@@ -14,9 +14,9 @@ const Home: FC = () => {
       <section className="hero-container">
         <div className="coffee-cup">
           <div className="headline-container">
-            <div className="text-behind">MORNING HAMONY</div>
-            <div className="text-behind-blur">MORNING HAMONY</div>
-            <div className="text-front">MORNING HAMONY</div>
+            <div className="text-behind">MORNING HARMONY</div>
+            <div className="text-behind-blur">MORNING HARMONY</div>
+            <div className="text-front">MORNING HARMONY</div>
             <h1> Love, Latte, Mocha & Comfort</h1>
           </div>
           <Canvas>

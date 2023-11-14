@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../../api/firebase"
+import axios from "axios"
 import "./categories.css"
 
 type Product = {
@@ -19,15 +20,18 @@ const Categories: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        console.log("Fetching products...");
-        const querySnapshot = await getDocs(collection(db, "products"));
-        console.log("Documents fetched: ", querySnapshot.docs.length);
-        const productsArray: Product[] = querySnapshot.docs.map((doc) => ({
-          ...(doc.data() as Product),
-          id: doc.id,
-        }));
-        console.log("Products array: ", productsArray);
-        setProducts(productsArray);
+        const response = await axios.get("https://coffee-shop-bc2d7-default-rtdb.europe-west1.firebasedatabase.app/.json") 
+        console.log("Response data:", response.data);
+  
+        if (response.data) {
+          const productsArray = Object.keys(response.data).map(key => ({
+            id: key,
+            ...response.data[key]
+          }));
+          setProducts(productsArray);
+        } else {
+          console.log("No data available at this path");
+        }
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -35,6 +39,8 @@ const Categories: React.FC = () => {
   
     fetchProducts();
   }, []);
+  
+  
   
   const handleCardClick = (id: string) => {
     navigate(`/product/${id}`)

@@ -19,8 +19,8 @@ exports.createCheckoutSession = functions.https.onCall(
             },
           ],
           mode: "payment",
-          success_url: "http://localhost:3000/success",
-          cancel_url: "http://localhost:3000/cancel",
+          success_url: "./success",
+          cancel_url: "./cancel",
         });
         return {sessionId: session.id};
       } catch (error) {
