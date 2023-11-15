@@ -1,16 +1,22 @@
 .product-detail-container {
     display: flex;
+    width: 80%;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    margin: 3rem;
+    margin: 3rem auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   }
   
   .product-image-section, .product-info-section {
     flex: 1;
-    min-width: 300px;
     padding: 10px;
   }
+   .product-info-section {
+    margin: 3rem auto;
+    padding-left: 3rem;
+   }
+
   
   .product-image {
     max-width: 100%;

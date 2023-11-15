@@ -8,6 +8,7 @@
   }
   
   .category-card {
+    width: 13rem;
     margin: 3rem auto;
     background: var(--secondary-background-color); 
     border-radius: 12px;

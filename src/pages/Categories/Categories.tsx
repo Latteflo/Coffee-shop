@@ -1,41 +1,11 @@
-import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
+import { useProducts } from "../../components/ProductsContext/ProductsContext"
 import "./categories.css"
-
-type Product = {
-  id: string
-  title: string
-  description: string
-  image: string
-  price: number
-}
 
 const Categories: React.FC = () => {
   const navigate = useNavigate()
-  const [products, setProducts] = useState<Product[]>([])
+  const products = useProducts()
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get("https://coffee-shop-bc2d7-default-rtdb.europe-west1.firebasedatabase.app/.json")   
-        if (response.data) {
-          const productsArray = Object.keys(response.data).map(key => ({
-            id: key,
-            ...response.data[key]
-          }));
-          setProducts(productsArray);
-        } 
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-  
-    fetchProducts();
-  }, []);
-  
-  
-  
   const handleCardClick = (id: string) => {
     navigate(`/product/${id}`)
   }

@@ -10,34 +10,41 @@ import NotFound from "./pages/NotFound/NotFound"
 import Categories from "./pages/Categories/Categories"
 import ProductDetails from "./pages/ProductDetail/ProductDetails"
 import ProfilePage from "./pages/ProfilePage/ProfilePage"
+import { ProductsProvider } from "./components/ProductsContext/ProductsContext"
+import { CartProvider } from "./components/CartContext/CartContext"
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 import "./App.css"
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY || '');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY || "")
 
 const ProductDetailsWithStripe = () => {
   return (
     <Elements stripe={stripePromise}>
       <ProductDetails />
     </Elements>
-  );
-};
+  )
+}
 
 const App: React.FC = () => {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/categories" element={<Categories />} />{" "}
-        <Route path="/product/:id" element={<ProductDetailsWithStripe />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/profile" element={<ProfilePage/>}/>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <CartProvider>
+        {" "}
+        <ProductsProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/product/:id" element={<ProductDetailsWithStripe/>} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>{" "}
+        </ProductsProvider>
+      </CartProvider>
       <Footer />
     </Router>
   )

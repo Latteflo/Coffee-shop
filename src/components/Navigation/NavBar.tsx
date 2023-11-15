@@ -1,6 +1,7 @@
 import { useState, FC } from "react"
 import { Link, useLocation } from "react-router-dom"
 import LoginModal from "../LoginModal/LoginModal"
+import { useCart } from "../CartContext/CartContext"
 import "font-awesome/css/font-awesome.min.css"
 import "../../index.css"
 import "./navbar.css"
@@ -21,7 +22,7 @@ const NavBar: FC = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false)
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false)
   const [showLogin, setShowLogin] = useState(false)
-
+  const { quantity } = useCart()
   const location = useLocation()
   const currentPath = location.pathname
 
@@ -31,7 +32,6 @@ const NavBar: FC = () => {
 
   const handleSearchIconClick = (): void => {
     if (isSearchOpen) {
-      // Perform the search here
       console.log("Search button clicked, perform search")
     }
     setIsSearchOpen(!isSearchOpen)
@@ -43,6 +43,7 @@ const NavBar: FC = () => {
 
   return (
     <nav className="nav">
+      <img src="../assets/images/logo.png" alt="logo" className="logo" />
       <div className="right-side">
         <ul className={`menu ${toggleMenu ? "active" : ""}`}>
           <li className={currentPath === "/" ? "active" : ""}>
@@ -100,8 +101,11 @@ const NavBar: FC = () => {
             )}
             <Icon className="fa fa-search" onClick={handleSearchIconClick} />
           </div>
-          <Icon className="fa fa-shopping-basket" />
-          <i className="fa fa-user" onClick={handleUserClick}></i>{" "}
+          <Link to="/cart" className="cart-icon-link">
+            <Icon className="fa fa-shopping-basket" aria-label="View Cart" />
+            {quantity > 0 && <span className="cart-quantity">{quantity}</span>}
+          </Link>
+          <i className="fa fa-user" onClick={handleUserClick}></i>
         </div>
       </div>
       {showLogin && <LoginModal close={() => setShowLogin(false)} />}
