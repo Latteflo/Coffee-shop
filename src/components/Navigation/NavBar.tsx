@@ -1,7 +1,8 @@
 import { useState, FC } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import LoginModal from "../LoginModal/LoginModal"
 import { useCart } from "../CartContext/CartContext"
+import { useUser } from "../UserContext/UserContext";
 import "font-awesome/css/font-awesome.min.css"
 import "../../index.css"
 import "./navbar.css"
@@ -23,8 +24,11 @@ const NavBar: FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false)
   const [showLogin, setShowLogin] = useState(false)
   const { quantity } = useCart()
+  const { user } = useUser()
   const location = useLocation()
   const currentPath = location.pathname
+  const navigator = useNavigate()
+  
 
   const handleToggle = (): void => {
     setToggleMenu(!toggleMenu)
@@ -38,6 +42,10 @@ const NavBar: FC = () => {
   }
 
   const handleUserClick = () => {
+    if (user) {
+      navigator("/profile")
+      return
+    }
     setShowLogin(!showLogin)
   }
 

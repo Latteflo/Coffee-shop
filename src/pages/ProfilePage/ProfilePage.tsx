@@ -1,13 +1,24 @@
-import React from "react";
+import React from "react"
+import { useUser } from "../../components/UserContext/UserContext"
 import "../../index.css"
-import "./profile.css";
+import "./profile.css"
 
-export const ProfilePage: React.FC = () => {
-    return (
-        <div className="profile-page">
-        <h2>Your profile page</h2>
-        </div>
-    );
-    }
+const ProfilePage: React.FC = () => {
+  const { user } = useUser()
 
-export default ProfilePage;
+  if (!user) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div className="profile-container">
+      <h1>
+        Hello {user.displayName || "Beloved Coffee Lover"}! Welcome to your
+        profile page!
+      </h1>
+      <p> Your email is: {user.email}</p>
+    </div>
+  )
+}
+
+export default ProfilePage
