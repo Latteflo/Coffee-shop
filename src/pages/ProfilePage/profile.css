@@ -1,5 +1,5 @@
 .profile-container {
-  background-color: var(--background-color);
+  background-color: rgba(255, 250, 240, 0.208);
   color: var(--text-light-color);
   display: flex;
   flex-direction: column;
@@ -11,16 +11,33 @@
   margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
 }
 
-.profile-container h1 {
-  color: var(--accent-color);
-  margin-bottom: 10px;
+.profile-container h1, p {
+  margin: 10px;
+  color: var(--secondary-background-color);
 }
 
-.profile-container p {
-  color: var(--text- --text-light-color);
-  font-size: 1.2em;
+
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 2rem;
+  padding: auto;
+}
+
+button{
+  background-color: var(--accent-color);
+  color: var(--text-light-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
