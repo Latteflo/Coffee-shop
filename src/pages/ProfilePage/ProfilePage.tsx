@@ -1,17 +1,16 @@
-import React from "react"
-import { useUser } from "../../components/UserContext/UserContext"
-import { useNavigate } from "react-router-dom"
+import React from "react";
+import { useUser } from "../../components/UserContext/UserContext";
+import { useNavigate } from "react-router-dom";
 import { signOut } from 'firebase/auth';
-import { Auth } from "../../api/firebase"
-import "../../index.css"
-import "./profile.css"
+import { Auth } from "../../api/firebase";
+import "./profile.css";
 
 const ProfilePage: React.FC = () => {
-  const { user } = useUser()
-  const navigate = useNavigate()
+  const { user } = useUser();
+  const navigate = useNavigate();
 
   if (!user) {
-    return <div>Loading...</div>
+    return <div className="loading">Loading...</div>;
   }
 
   const goToShop = () => {
@@ -20,7 +19,6 @@ const ProfilePage: React.FC = () => {
 
   const logOut = async () => {
     try {
-
       await signOut(Auth);
       navigate('/');
     } catch (error) {
@@ -28,21 +26,18 @@ const ProfilePage: React.FC = () => {
     }
   };
 
-
   return (
     <div className="profile-container">
-      <h1>
-        Hello {user.displayName || "Beloved Coffee Lover"}! 
-        <br/>
-        Welcome to your profile page!
-      </h1>
-      <p> Your email is: {user.email}</p>
-      <div className="buttons">
-        <button onClick={goToShop}>Go to shop</button> 
-        <button onClick={logOut}>Log Out</button>
+      <div className="profile-header">
+        <h1>Welcome, {user.displayName || "Beloved Coffee Lover"}!</h1>
+        <p>Your email: {user.email}</p>
+      </div>
+      <div className="profile-actions">
+        <button className="btn" onClick={goToShop}>Go to Shop</button> 
+        <button className="btn" onClick={logOut}>Log Out</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;

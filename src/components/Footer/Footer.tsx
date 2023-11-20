@@ -14,7 +14,7 @@ import './footer.css';
 
 type FooterLinkItemProps = {
   href: string;
-  icon: any; 
+  icon: any;
   children: React.ReactNode;
 };
 
@@ -30,6 +30,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-section">
+        <h4>Company</h4>
         <ul>
           <li>About Us</li>
           <li>Terms & Conditions</li>
@@ -37,6 +38,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="footer-section">
+        <h4>Follow Us</h4>
         <ul>
           <FooterLinkItem href="https://facebook.com" icon={faFacebookF}>
             Facebook
@@ -50,6 +52,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="footer-section">
+        <h4>Contact</h4>
         <ul>
           <FooterLinkItem href="mailto:info@example.com" icon={faEnvelope}>
             Email
@@ -63,6 +66,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="footer-section">
+        <h4>Opportunities</h4>
         <ul>
           <li>Careers</li>
           <li>Internships</li>

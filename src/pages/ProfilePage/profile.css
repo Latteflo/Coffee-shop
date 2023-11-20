@@ -1,37 +1,29 @@
+
 .profile-container {
-  background-color: rgba(255, 250, 240, 0.208);
-  color: var(--text-light-color);
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
   justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 50%;
-  height: 400px;
-  margin: 20px auto;
+  height: 100dvh; 
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
 }
 
-.profile-container h1, p {
+.profile-container h1, .profile-container p {
   margin: 10px;
   color: var(--secondary-background-color);
 }
 
-
-
-.buttons{
+.profile-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 50%;
-  margin: 2rem;
-  padding: auto;
+  gap: 1rem;
+  margin: 1rem;
+  justify-content: space-between; 
 }
 
-button{
+button {
   background-color: var(--accent-color);
   color: var(--text-light-color);
   border: none;
@@ -39,5 +31,29 @@ button{
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out; 
+}
+
+button:hover {
+  background-color: darken(var(--accent-color), 10%); 
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    max-width: 90%; 
+  }
+
+  .buttons {
+    flex-direction: column; 
+    align-items: stretch;
+    margin-top: 1rem;
+  }
+
+  button {
+    margin-bottom: 10px;
+  }
+
+  button:last-child {
+    margin-bottom: 0;
+  }
 }

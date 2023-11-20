@@ -1,53 +1,74 @@
-import { useState, FC } from "react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
-import LoginModal from "../LoginModal/LoginModal"
-import { useCart } from "../CartContext/CartContext"
+import React, { useState, FC } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import LoginModal from "../LoginModal/LoginModal";
+import { useCart } from "../CartContext/CartContext";
 import { useUser } from "../UserContext/UserContext";
-import "font-awesome/css/font-awesome.min.css"
-import "../../index.css"
-import "./navbar.css"
+import { signOut } from 'firebase/auth'; 
+import { Auth } from "../../api/firebase"; 
+import "font-awesome/css/font-awesome.min.css";
+import "../../index.css";
+import "./navbar.css";
 
 type IconProps = {
-  className: string
-  ariaHidden?: boolean
-  onClick?: () => void
-}
+  className: string;
+  ariaHidden?: boolean;
+  onClick?: () => void;
+};
 
 const Icon: FC<IconProps> = ({ className, ariaHidden = true, onClick }) => {
   return (
     <i className={className} aria-hidden={ariaHidden} onClick={onClick}></i>
-  )
-}
+  );
+};
 
 const NavBar: FC = () => {
-  const [toggleMenu, setToggleMenu] = useState<boolean>(false)
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false)
-  const [showLogin, setShowLogin] = useState(false)
-  const { quantity } = useCart()
-  const { user } = useUser()
-  const location = useLocation()
-  const currentPath = location.pathname
-  const navigator = useNavigate()
-  
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const { quantity } = useCart();
+  const { user } = useUser();
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const navigate = useNavigate();
 
   const handleToggle = (): void => {
-    setToggleMenu(!toggleMenu)
-  }
+    setToggleMenu(!toggleMenu);
+  };
 
   const handleSearchIconClick = (): void => {
-    if (isSearchOpen) {
-      console.log("Search button clicked, perform search")
-    }
-    setIsSearchOpen(!isSearchOpen)
-  }
+    setIsSearchOpen(!isSearchOpen);
+  };
 
   const handleUserClick = () => {
     if (user) {
-      navigator("/profile")
-      return
+      navigate("/profile"); 
+    } else {
+      setShowLogin(true); 
     }
-    setShowLogin(!showLogin)
-  }
+  };
+
+  const logOut = async () => {
+    try {
+      await signOut(Auth);
+      navigate('/');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
+  const userMenu = user ? (
+    <div className="user-menu">
+      <div className="user-options">
+        <button onClick={logOut}>Log Out</button>
+      </div>
+    </div>
+  ) : (
+    <button onClick={() => setShowLogin(true)}>Login</button>
+  );
+
+  const handleCartClick = () => {
+    navigate('/checkout'); 
+  };
 
   return (
     <nav className="nav">
@@ -110,14 +131,17 @@ const NavBar: FC = () => {
             <Icon className="fa fa-search" onClick={handleSearchIconClick} />
           </div>
           <Link to="/cart" className="cart-icon-link">
-            <Icon className="fa fa-shopping-basket" aria-label="View Cart" />
-            {quantity > 0 && <span className="cart-quantity">{quantity}</span>}
+          <div className="cart-icon-link" onClick={handleCartClick}>
+          {quantity > 0 && <span className="cart-quantity">{quantity}</span>}
+          <Icon className="fa fa-shopping-basket" aria-label="View Cart" />
+          </div>
           </Link>
           <i className="fa fa-user" onClick={handleUserClick}></i>
         </div>
       </div>
+      {userMenu}
       {showLogin && <LoginModal close={() => setShowLogin(false)} />}
-    </nav>
+    </nav>    
   )
 }
 
