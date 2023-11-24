@@ -52,7 +52,9 @@ h3 {
   font-size: 1.8rem;
 }
 
-
+p{
+  color: var(--text-light-color);
+}
 a,
 button,
 input,
